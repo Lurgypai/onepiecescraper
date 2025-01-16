@@ -65,6 +65,8 @@ html_base = ' \
 def generate_card_url(card):
     card_url = 'https://onepiecetopdecks.com/wp-content/gallery/SET/CARD.jpg'
     setid = card.split('-')[0].lower()
+    if setid == 'p':
+        setid == 'p01'
     return card_url.replace('SET', setid, 1).replace('CARD', card, 1)
 
 def generate_deck_base(leader, count):
