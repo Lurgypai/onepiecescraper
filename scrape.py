@@ -95,7 +95,9 @@ def generate_card_instance(card, percent, avg):
                 </div> \
     '
     card_url = generate_card_url(card)
-    return card_base.replace('CARD_IMAGE', card_url, 1).replace('PERCENT', '{:.2f}'.format(percent), 1).replace('AVG', str(avg), 1)
+    percent_formatted = f'{percent:.2f}'
+    avg_formatted = f'{avg:.2f}'
+    return card_base.replace('CARD_IMAGE', card_url, 1).replace('PERCENT', percent_formatted, 1).replace('AVG', avg_formatted, 1)
 
 
 try:
